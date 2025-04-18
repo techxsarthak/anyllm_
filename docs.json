@@ -32,8 +32,11 @@
           }
         ]
       },
+      {
+        "tab": "Endpoint Examples",
+        "groups": [
           {
-            "group": "Endpoint Examples",
+            "group": "API Reference",
             "pages": [
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
@@ -42,27 +45,27 @@
             ]
           }
         ]
+      }
+    ]
   },
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+  "global": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "href": "https://mintlify.com/docs",
+        "icon": "book-open-cover"
+      },
+      {
+        "anchor": "Community",
+        "href": "https://mintlify.com/community",
+        "icon": "slack"
+      },
+      {
+        "anchor": "Blog",
+        "href": "https://mintlify.com/blog",
+        "icon": "newspaper"
+      }
+    ]
   },
   "logo": {
     "light": "/images/ChatGPTImageApr13,2025,04_03_04PM.png",
