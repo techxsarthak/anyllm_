@@ -7,7 +7,7 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/images/ChatGPTImageApr13,2025,04_03_04PM.png",
+  "favicon": "/images/logo.png",
   "navigation": {
     "tabs": [
       {
@@ -31,7 +31,7 @@
             ]
           }
         ]
-      },
+      }
     ]
   },
   "global": {
@@ -54,8 +54,8 @@
     ]
   },
   "logo": {
-    "light": "/images/ChatGPTImageApr13,2025,04_03_04PM.png",
-    "dark": "/images/ChatGPTImageApr13,2025,04_03_04PM.png"
+    "light": "/images/logo.png",
+    "dark": "/images/logo.png"
   },
   "navbar": {
     "links": [
