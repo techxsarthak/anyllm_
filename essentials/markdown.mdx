@@ -1,88 +1,86 @@
 ---
-title: 'Markdown Syntax'
-description: 'Text, title, and styling in standard markdown'
-icon: 'text-size'
+title: "Models Support"
+description: "Last updated 19 April, 2025- 10:00 AM IST"
+icon: "text-size"
 ---
 
-## Titles
+## Standard Models
 
-Best used for section headers.
+<Info>
+  Fast models requiring less compute that run and take decisions efficiently.
+</Info>
 
-```md
-## Titles
-```
+<CardGroup cols="2">
+  <Card title="Gemma" icon="google">
+    Gemma open models are built from the same research and technology as Gemini models.
+  </Card>
+  <Card title="Llama-3" icon="meta">
+    Available in 8b/70b. Great model for performing any task.
+  </Card>
+</CardGroup>
 
-### Subtitles
+<CardGroup cols="2">
+  <Card title="Mistral Saba" icon="m">
+    24b model great for performing various tasks with high efficiency.
+  </Card>
+  <Card title="Llama-3" icon="meta">
+    Available in 8b/70b. Great model for performing any task.
+  </Card>
+</CardGroup>
 
-Best use to subsection headers.
+### Llama Models
 
-```md
-### Subtitles
-```
+<Info>
+  Llama models are known for their scalability and versatility across various applications.
+</Info>
 
-<Tip>
+<CardGroup cols="2">
+  <Card title="Llama 3.3 70b" icon="meta">
+    A high-end 70b model from Llama 3.3, designed for complex tasks and large-scale operations.
+  </Card>
+  <Card title="Llama 3.1 8b" icon="meta">
+    A lighter 8b model, perfect for smaller tasks and quicker computations.
+  </Card>
+</CardGroup>
 
-Each **title** and **subtitle** creates an anchor and also shows up on the table of contents on the right.
+<CardGroup cols="2">
+  <Card title="Llama 3 70b" icon="meta">
+    A powerful 70b model, ideal for large datasets and intricate reasoning.
+  </Card>
+  <Card title="Llama 3 8b" icon="meta">
+    A smaller 8b version, designed for efficient, real-time decision-making.
+  </Card>
+</CardGroup>
 
-</Tip>
+<CardGroup cols="2">
+  <Card title="Llama 4 Scout" icon="meta">
+    A cutting-edge model from the Llama 4 series, designed to scout and identify key insights from data.
+  </Card>
+  <Card title="Llama 4 Maverick" icon="meta">
+    Llama 4 Maverick is a high-performance model focused on pushing the boundaries of AI capabilities.
+  </Card>
+</CardGroup>
 
-## Text Formatting
+### Specialized Models
 
-We support most markdown formatting. Simply add `**`, `_`, or `~` around text to format it.
+<Info>
+  These models are fine-tuned for specific tasks, like reasoning, exploration, or generating complex content.
+</Info>
 
-| Style         | How to write it   | Result          |
-| ------------- | ----------------- | --------------- |
-| Bold          | `**bold**`        | **bold**        |
-| Italic        | `_italic_`        | _italic_        |
-| Strikethrough | `~strikethrough~` | ~strikethrough~ |
+<CardGroup cols="2">
+  <Card title="Deepseek R1 Llama Reasoning" icon="meta">
+    A model built specifically for deep reasoning tasks and complex problem-solving, based on Llama technology.
+  </Card>
+  <Card title="Qwen QWQ 32b" icon="qwen">
+    A 32b model focused on high-efficiency reasoning and decision-making at scale.
+  </Card>
+</CardGroup>
 
-You can combine these. For example, write `**_bold and italic_**` to get **_bold and italic_** text.
-
-You need to use HTML to write superscript and subscript text. That is, add `<sup>` or `<sub>` around your text.
-
-| Text Size   | How to write it          | Result                 |
-| ----------- | ------------------------ | ---------------------- |
-| Superscript | `<sup>superscript</sup>` | <sup>superscript</sup> |
-| Subscript   | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
-
-## Linking to Pages
-
-You can add a link by wrapping text in `[]()`. You would write `[link to google](https://google.com)` to [link to google](https://google.com).
-
-Links to pages in your docs need to be root-relative. Basically, you should include the entire folder path. For example, `[link to text](/writing-content/text)` links to the page "Text" in our components section.
-
-Relative links like `[link to text](../text)` will open slower because we cannot optimize them as easily.
-
-## Blockquotes
-
-### Singleline
-
-To create a blockquote, add a `>` in front of a paragraph.
-
-> Dorothy followed her through many of the beautiful rooms in her castle.
-
-```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
-```
-
-### Multiline
-
-> Dorothy followed her through many of the beautiful rooms in her castle.
->
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
-
-```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
->
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
-```
-
-### LaTeX
-
-Mintlify supports [LaTeX](https://www.latex-project.org) through the Latex component.
-
-<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
-
-```md
-<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
-```
+<CardGroup cols="2">
+  <Card title="Agentic Compound" icon="agentic">
+    A multi-model compound designed to combine several AI components for enhanced cognitive abilities.
+  </Card>
+  <Card title="Agentic Mini" icon="agentic">
+    A smaller variant of the Agentic Compound, optimized for quick tasks and minimal resource use.
+  </Card>
+</CardGroup>
