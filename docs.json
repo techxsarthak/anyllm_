@@ -23,11 +23,7 @@
             "group": "Essentials",
             "pages": [
               "essentials/models",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "essentials/premium"
             ]
           }
         ]
