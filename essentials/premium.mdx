@@ -1,59 +1,21 @@
 ---
-title: 'Images and Embeds'
-description: 'Add image, video, and other HTML elements'
-icon: 'image'
+title: "Pricing"
+description: "This page explains the benefits of AnyLLM Plus Plan"
+icon: "image"
 ---
 
-<img
-  style={{ borderRadius: '0.5rem' }}
-  src="https://mintlify-assets.b-cdn.net/bigbend.jpg"
-/>
-
-## Image
-
-### Using Markdown
-
-The [markdown syntax](https://www.markdownguide.org/basic-syntax/#images) lets you add images using the following code
-
-```md
-![title](/path/image.jpg)
-```
-
-Note that the image file size must be less than 5MB. Otherwise, we recommend hosting on a service like [Cloudinary](https://cloudinary.com/) or [S3](https://aws.amazon.com/s3/). You can then use that URL and embed.
-
-### Using Embeds
-
-To get more customizability with images, you can also use [embeds](/writing-content/embed) to add images
-
-```html
-<img height="200" src="/path/image.jpg" />
-```
-
-## Embeds and HTML elements
-
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/4KzFe50RQkQ"
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  style={{ width: '100%', borderRadius: '0.5rem' }}
-></iframe>
-
-<br />
-
 <Tip>
-
-Mintlify supports [HTML tags in Markdown](https://www.markdownguide.org/basic-syntax/#html). This is helpful if you prefer HTML tags to Markdown syntax, and lets you create documentation with infinite flexibility.
-
+  AnyLLM is free to use for 10 messages daily (premium messages not included). If you want to use the latest and the best models with very high rate limits it's advisable to upgrade to plus plan
 </Tip>
 
-### iFrames
+<CardGroup cols="2">
+  <Card title="Free Plan" icon="sparkle">
+    - **10** standard messages (daily)
+    - **Premium models not included**
+  </Card>
+  <Card title="Plus Plan (5.99$)" icon="sparkles" href="pay.anyllm.xyz">
+    **1000** standard messages (per month)
 
-Loads another HTML page within the document. Most commonly used for embedding videos.
-
-```html
-<iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
-```
+    **500** premium messages (per month)
+  </Card>
+</CardGroup>
