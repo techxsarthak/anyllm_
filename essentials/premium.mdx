@@ -1,21 +1,163 @@
 ---
-title: "Pricing"
-description: "This page explains the benefits of AnyLLM Plus Plan"
-icon: "coin"
+title: "🚀 AnyLLM Landing"
+description: "Beautiful, responsive, and accessible landing page for AnyLLM — a unified AI model interface. Built with React + TypeScript, Vite, and Tailwind CSS. ✨"
 ---
 
-<Tip>
-  AnyLLM is free to use for 10 messages daily (premium messages not included). If you want to use the latest and the best models with very high rate limits it's advisable to upgrade to plus plan
-</Tip>
+### 🧩 Tech Stack
 
-<CardGroup cols="2">
-  <Card title="Free Plan" icon="sparkle" href="https://anyllm.xyz">
-    - **10** standard messages (daily)
-    - **Premium models not included**
-  </Card>
-  <Card title="Plus Plan (5.99$)" icon="sparkles" href="https://pay.anyllm.xyz">
-    **1000** standard messages (per month)
+- **React 18** \+ **TypeScript**
+- **Vite 5** for lightning-fast dev/build
+- **Tailwind CSS 3** for styling
+- **Lucide Icons** for crisp SVG icons
+- Optional: **Vercel Analytics** for basic traffic insights
 
-    **500** premium messages (per month)
-  </Card>
-</CardGroup>
+### ✨ Features
+
+- **Modern UI/UX**: Animated hero, gradient blobs, subtle motion
+- **Models Showcase**: Categorized model sections with feature badges
+- **Pricing**: Simple plans with highlighted “Most Popular” option
+- **Responsive & Accessible**: Mobile-first, ARIA labels, keyboard-friendly
+- **Type-safe Data**: Strongly typed `models` and `pricing` data sources
+
+### 🗂️ Project Structure
+
+```text
+anyllm-landing/
+  ├─ src/
+  │  ├─ components/
+  │  │  ├─ Navbar.tsx
+  │  │  ├─ Hero.tsx
+  │  │  ├─ ModelSection.tsx
+  │  │  ├─ ModelCategory.tsx
+  │  │  ├─ ModelCard.tsx
+  │  │  ├─ ModelFeatureBadge.tsx
+  │  │  ├─ PricingSection.tsx
+  │  │  └─ PricingCard.tsx
+  │  ├─ data/
+  │  │  ├─ models.ts
+  │  │  └─ pricing.ts
+  │  ├─ styles/
+  │  │  └─ animations.css
+  │  ├─ assets/
+  │  ├─ App.tsx
+  │  ├─ main.tsx
+  │  └─ index.css
+  ├─ tailwind.config.js
+  ├─ vite.config.ts
+  ├─ eslint.config.js
+  ├─ tsconfig*.json
+  └─ index.html
+```
+
+### 🧰 Getting Started
+
+Prerequisites:
+
+- Node.js 18\+ and npm
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the dev server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the build locally:
+
+```bash
+npm run preview
+```
+
+Lint the code:
+
+```bash
+npm run lint
+```
+
+### 🧱 Data Model (TypeScript)
+
+Models and pricing are defined as typed data sources:
+
+```ts
+// src/data/models.ts
+export type ModelFeature = 'reasoning' | 'image' | 'search' | 'code';
+
+export interface Model {
+  name: string;
+  description: string;
+  context: string; // e.g. "128K context"
+  features: ModelFeature[];
+}
+
+export interface ModelCategory {
+  provider: string;
+  description: string;
+  models: Model[];
+}
+
+export interface ModelSection {
+  title: string;
+  description: string;
+  categories: ModelCategory[];
+}
+```
+
+```ts
+// src/data/pricing.ts
+export interface PricingPlan {
+  name: string;
+  price: string;      // "$0", "$5.99", …
+  features: string[]; // bullets
+  isPopular?: boolean;
+}
+```
+
+### 🎨 Styling & Animations
+
+- Tailwind utilities are used throughout for layout and theming.
+- Custom animations live in `src/styles/animations.css` (fade-in, pulse-size, blob, sequential highlights).
+- Extra Tailwind keyframes are also extended in `tailwind.config.js`.
+
+### ♿ Accessibility
+
+- Semantic landmarks and ARIA labels on `nav`, `section`, and `footer`.
+- Buttons for interactive icons (e.g., GitHub) with `aria-label`.
+- Focusable, keyboard-friendly interactions and sufficient color contrast.
+
+### 🛠️ Scripts
+
+- `npm run dev` — start Vite dev server
+- `npm run build` — production build
+- `npm run preview` — preview built assets
+- `npm run lint` — run ESLint (TypeScript \+ React rules)
+
+### 🚢 Deployment
+
+- Vercel: import the repo, framework preset “Vite”, default build is `npm run build`, output `dist/`.
+- Netlify: set build `npm run build`, publish directory `dist/`.
+- GitHub Pages: build locally and push `dist/` to a `gh-pages` branch (or use an action).
+
+### 🧪 Quality
+
+- ESLint with React hooks and refresh rules
+- TypeScript strict typing on data and components
+
+### 🙏 Acknowledgements
+
+- Logos and trademarks belong to their respective owners (OpenAI, Google, Meta, Alibaba, Mistral, DeepSeek, SDAIA).
+- Icons by `lucide-react`.
+
+### 💬 Feedback
+
+Spotted a bug or have a feature idea? Open an issue or submit a PR — contributions are welcome\! 🎉

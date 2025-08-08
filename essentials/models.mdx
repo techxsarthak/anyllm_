@@ -1,191 +1,146 @@
 ---
-title: "Models Support"
-description: "Last updated 19 April, 2025- 10:00 AM IST"
-icon: "sparkles"
+title: "AnyLLM Chat – Starter Template 💬🤖"
+description: "A Vite + React + TypeScript chat UI template powered by multiple LLM providers. All branding, links, endpoints, and keys are read from environment variables so you can adapt the app without touching the main code."
 ---
 
-## Standard Models
+## ✅ Prerequisites
 
-<Info>
-  Fast models requiring less compute that run and take decisions efficiently.
-</Info>
+- Node.js 18\+ (Vite 5 requires Node 18 or newer)
+- npm (or pnpm/yarn)
+- Accounts/keys for: OpenRouter and/or Groq (for chat), Firebase (Auth \+ Realtime Database), optionally Gumroad (license verification)
 
-### Meta
+## 🚀 Quick Start
 
-<Tip>
-  Llama models are known for their scalability and versatility across various applications.
-</Tip>
+1. Install dependencies
 
-<CardGroup cols="2">
-  <Card title="Llama 4 Scout" icon="meta">
-    Best for complex reasoning tasks. Features 131K context.
-  </Card>
-  <Card title="Llama 4 Maverick" icon="meta">
-    Optimized for fast, accurate responses with image support. Features 131K context.
-  </Card>
-</CardGroup>
+```bash
+npm install
+```
 
-<CardGroup cols="2">
-  <Card title="Llama 3.3 70B" icon="meta">
-    Versatile model for diverse tasks with 128K context.
-  </Card>
-  <Card title="Llama 3.1 8B" icon="meta">
-    Fast and efficient for simple tasks with 128K context.
-  </Card>
-</CardGroup>
+2. Create `.env` in the project root
 
-<CardGroup cols="2">
-  <Card title="Llama 3 70B" icon="meta">
-    Powerful model for general use with 8K context.
-  </Card>
-  <Card title="Llama 3 8B" icon="meta">
-    Lightweight model for basic tasks with 8K context.
-  </Card>
-</CardGroup>
+Required at runtime (the app will not start without these):
 
-### Google
+```env
+# Provider keys and endpoints
+VITE_OPENROUTER_API_URL=https://openrouter.ai/api/v1/chat/completions
+VITE_GROQ_API_URL=https://api.groq.com/openai/v1/chat/completions
+VITE_GROQ_TRANSCRIBE_URL=https://api.groq.com/openai/v1/audio/transcriptions
+VITE_OPENROUTER_API_KEY=your_openrouter_key
+VITE_GROQ_API_KEY=your_groq_key
 
-<Tip>
-  Fast models that are excellent in any task, with strong multimodal capabilities.
-</Tip>
+# Firebase (client-side)
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=000000000000
+VITE_FIREBASE_APP_ID=1:000000000000:web:abcd1234abcd1234
+VITE_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
+```
 
-<CardGroup cols="2">
-  <Card title="Gemini Flash 2.0" icon="google">
-    Fast TTFT, multimodal understanding, coding, and function calling. Features 1M context and image support.
-  </Card>
-  <Card title="Gemini Flash 2.0 Thinking" icon="google">
-    Experimental version with enhanced thinking capabilities. Features 1M context and image support.
-  </Card>
-</CardGroup>
+Optional (branding, links, pricing, assets):
 
-<CardGroup cols="2">
-  <Card title="Gemini Flash 2.0 Thinking 1219" icon="google">
-    Enhanced reasoning and analytical capabilities. Features 1M context and image support.
-  </Card>
-  <Card title="LearnLM 1.5 Pro" icon="google">
-    Experimental pro model with advanced learning capabilities. Features 128K context and image support.
-  </Card>
-</CardGroup>
+```env
+VITE_SITE_NAME=AnyLLM
+VITE_SITE_URL=https://example.com
+VITE_SITE_DESCRIPTION=Your site description
+VITE_SITE_KEYWORDS=keyword1, keyword2
+VITE_OG_IMAGE_URL=/icons/og-image.png
 
-<CardGroup cols="2">
-  <Card title="Gemma 3 27B" icon="google">
-    Latest Gemma model with enhanced instruction following. Features 32K context and image support.
-  </Card>
-  <Card title="Gemma 2 9B" icon="google">
-    Efficient model for instruction following with 8K context.
-  </Card>
-</CardGroup>
+VITE_DOCS_URL=https://docs.example.com
+VITE_APP_URL=https://app.example.com
+VITE_UPGRADE_URL=https://pay.example.com
+VITE_GITHUB_URL=https://github.com/you/yourrepo
+VITE_TWITTER_URL=https://x.com/yourhandle
+VITE_COMPANY_ABOUT_URL=https://example.com/about
+VITE_CONTACT_EMAIL=hello@example.com
 
-### DeepSeek
+VITE_PRICE_MONTHLY=5.99
+VITE_GUMROAD_PRODUCT_ID=your_gumroad_product_id
 
-<Tip>
-  Models optimized for natural conversations and advanced reasoning.
-</Tip>
+VITE_LOADER_LOGO_URL=
+```
 
-<CardGroup cols="2">
-  <Card title="DeepSeek Chat V3" icon="whale">
-    Latest chat model with enhanced capabilities. Features 32K context.
-  </Card>
-  <Card title="DeepSeek R1" icon="whale">
-    Advanced reasoning and analysis model with 32K context. Supports reasoning.
-  </Card>
-</CardGroup>
+3. Start the dev server
 
-<CardGroup cols="2">
-  <Card title="DeepSeek R1 Zero" icon="whale">
-    Zero-shot reasoning capabilities with 32K context. Supports reasoning.
-  </Card>
-  <Card title="DeepSeek V3 Base" icon="whale">
-    Base model with broad capabilities. Features 32K context.
-  </Card>
-</CardGroup>
+```bash
+npm run dev
+```
 
-<CardGroup cols="2">
-  <Card title="DeepSeek Chat" icon="whale">
-    Optimized for natural conversations with 32K context.
-  </Card>
-</CardGroup>
+If required variables are missing, the app shows a full-screen hint listing what to add.
 
-### Alibaba
+## 🔌 Provider Setup
 
-<Tip>
-  Advanced vision-language models with strong reasoning capabilities.
-</Tip>
+### OpenRouter (Chat API)
 
-<CardGroup cols="2">
-  <Card title="Qwen 2.5 VL 72B" icon="q">
-    Latest vision-language model with 72B parameters. Features 32K context and image support.
-  </Card>
-  <Card title="Qwen 2.5 VL 32B" icon="q">
-    Efficient vision-language model with 32B parameters. Features 32K context and image support.
-  </Card>
-</CardGroup>
+- Create an account and generate an API key.
+- Set `VITE_OPENROUTER_API_KEY` and `VITE_OPENROUTER_API_URL`.
 
-### Mistral
+### Groq (Chat \+ Transcription)
 
-<Tip>
-  Great for coding, reasoning, and image understanding tasks.
-</Tip>
+- Create an account and generate an API key.
+- Set `VITE_GROQ_API_KEY`, `VITE_GROQ_API_URL`, and `VITE_GROQ_TRANSCRIBE_URL`.
 
-<CardGroup cols="2">
-  <Card title="Mistral Small 3.1 24B" icon="m">
-    Latest model with image understanding. Features 32K context and image support.
-  </Card>
-  <Card title="Mistral Small 24B" icon="m">
-    Advanced instruction following with 32K context.
-  </Card>
-</CardGroup>
+### Firebase (Auth \+ Realtime Database)
 
-<CardGroup cols="2">
-  <Card title="Mistral Nemo" icon="m">
-    Specialized in code and technical tasks with 32K context.
-  </Card>
-  <Card title="Dolphin 3.0 24B" icon="m">
-    Enhanced conversational abilities with 32K context.
-  </Card>
-</CardGroup>
+1. Create a Firebase project.
+2. In Build → Authentication → Sign-in method, enable Google.
+3. In Build → Realtime Database, create a database (choose location, start rules as needed for your app). You can import `database.rules.json` or configure rules in console.
+4. Go to Project settings → Your apps (Web) and copy config values into the `VITE_FIREBASE_*` variables.
 
-<CardGroup cols="2">
-  <Card title="Dolphin 3.0 R1 24B" icon="m">
-    Advanced reasoning capabilities with 32K context. Supports reasoning.
-  </Card>
-  <Card title="Mistral 7B" icon="m">
-    Efficient model for general tasks with 32K context.
-  </Card>
-</CardGroup>
+### Gumroad (License Verification, optional)
 
-### SDAIA
+- Create a product and enable license keys.
+- Find the product identifier (see Gumroad docs) and set `VITE_GUMROAD_PRODUCT_ID`.
+- Set `VITE_UPGRADE_URL` to your Gumroad checkout/overlay link if you use the in-app upgrade button.
 
-<Tip>
-  Advanced language models for Arabic and English tasks.
-</Tip>
+## ⚙️ Configuration Reference
 
-<CardGroup cols="2">
-  <Card title="Allam 2 7B" icon="language">
-    Advanced language model for Arabic and English tasks with 8K context.
-  </Card>
-</CardGroup>
+Central config lives in `src/config.ts` (reads from `import.meta.env`).
 
-## Premium Models
+- Branding & SEO: `VITE_SITE_NAME`, `VITE_SITE_URL`, `VITE_SITE_DESCRIPTION`, `VITE_SITE_KEYWORDS`, `VITE_OG_IMAGE_URL`
+- External Links: `VITE_DOCS_URL`, `VITE_APP_URL`, `VITE_UPGRADE_URL`, `VITE_GITHUB_URL`, `VITE_TWITTER_URL`, `VITE_COMPANY_ABOUT_URL`, `VITE_CONTACT_EMAIL`
+- Pricing / Gumroad: `VITE_PRICE_MONTHLY`, `VITE_GUMROAD_PRODUCT_ID`
+- APIs: `VITE_OPENROUTER_API_URL`, `VITE_GROQ_API_URL`, `VITE_GROQ_TRANSCRIBE_URL`, `VITE_OPENROUTER_API_KEY`, `VITE_GROQ_API_KEY`
+- Firebase: `VITE_FIREBASE_*`
 
-<Info>
-  These models are fine-tuned for specific tasks, like reasoning, exploration, or generating complex content.
-</Info>
+Static files to review:
 
-<CardGroup cols="2">
-  <Card title="DeepSeek R1 Llama Reasoning" icon="whale">
-    Specialized for deep reasoning with 128K context. Supports reasoning.
-  </Card>
-  <Card title="Qwen QWQ 32B" icon="q">
-    Enhanced conversational model with reasoning. Features 32K context and reasoning support.
-  </Card>
-</CardGroup>
+- `public/manifest.json` → PWA name/short_name/description/icons
+- `public/robots.txt` and `public/sitemap.xml`
+- `index.html` → neutral meta; per-page SEO is set via `src/components/SEO.tsx`
 
-<CardGroup cols="2">
-  <Card title="Agentic Compound" icon="brain">
-    Advanced model with web search and code execution capabilities. Supports reasoning.
-  </Card>
-  <Card title="Agentic Compound Mini" icon="brain">
-    Smaller version with web search and code execution capabilities. Supports reasoning.
-  </Card>
-</CardGroup>
+## 🧰 Development
+
+- Dev server: `npm run dev`
+- Lint: `npm run lint`
+- Build: `npm run build` (outputs to `dist/`)
+- Preview: `npm run preview`
+
+## ☁️ Deploy (Vercel)
+
+1. Add the repo on Vercel.
+2. Set all `VITE_*` variables in Project → Settings → Environment Variables.
+3. Build command: `vite build` (default via `npm run build`).
+4. Output directory: `dist/`.
+5. `vercel.json` in this repo routes SPA paths to `index.html`.
+
+## 🎨 Customize
+
+- Replace logos in `src/assets/` and PWA icons in `public/icons/`.
+- Update `public/manifest.json` name/short_name.
+- Edit copy in `src/components/Hero.tsx`, `PricingSection.tsx`, etc.
+- Adjust landing model sections in `src/data/models.ts`.
+
+## 🧯 Troubleshooting
+
+- Missing env screen: ensure all keys listed in the hint are present in `.env`.
+- 401/403 from providers: verify the correct API key and endpoint URL; check billing.
+- Firebase permission errors: review Realtime Database rules and authentication state.
+- Google sign-in blocked: set your authorized domain in Firebase Auth settings.
+
+## 🔒 Security Notes
+
+- Do not commit your real `.env`.
+- Vite `VITE_*` envs are exposed to the client. If you must protect provider keys, proxy requests through your own backend.
